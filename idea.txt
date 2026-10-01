@@ -1,0 +1,6 @@
+a basic but functional turn based rpg, with exploration mechanics
+inspirations: oregon trail, honkai star rail
+
+structure: main.
+
+features: loading settings from a conf

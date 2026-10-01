@@ -1,0 +1,5 @@
+1 - clear and concise communication
+2 - honesty
+3 - don't bring up irrelevant things like politics into the code (although if you're making a game that tells a story, that's different i suppose)
+4 - Unix philosophy: things should be modular, each module or program should do one thing and do it well, and work with other programs or modules.
+5 - NO AI SLOP COMMITS; AI is fine if you're using it to help debug, or explain things to do, but please do not commit AI generated code as although it may be functional, it often is of poor quality and makes creates more work for maintaining code long term. or else you end up with things like window's start menu's recommended page being coded in react native and not window's native UI toolkits. (microsoft, why?!?)
