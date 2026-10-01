@@ -4,3 +4,9 @@ inspirations: oregon trail, honkai star rail
 structure: main.
 
 features: loading settings from a conf
+
+structure
+functions related to a feature will be stored in their own file, which will be imported by the main program. this may seem excessive for a project as small as mine, but i like to use best programming practices wherever possible.
+eg. the multiple functions related to loading and saving player save data will be stored in modules/playersave.py
+
+non python assets, such as the json file defining enemy stats based on difficulty will be stored in /assets. (eg. assets/difficulty.json)
