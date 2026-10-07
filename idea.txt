@@ -1,12 +1,13 @@
 a basic but functional turn based rpg, with exploration mechanics
-inspirations: oregon trail, honkai star rail
+inspirations: oregon trail, honkai star rail, touhou, undertale/deltarune, omori, breath of the wild, 
 
-structure: main.
-
-features: loading settings from a conf
+features: loading settings from a conf, a narative story, giving the player multiple options in turns, turn based combat with enemies (as objects) with their own health and damage values, player survival
+might use pygame to render a window depending on how much total classwork i have
 
 structure
 functions related to a feature will be stored in their own file, which will be imported by the main program. this may seem excessive for a project as small as mine, but i like to use best programming practices wherever possible.
 eg. the multiple functions related to loading and saving player save data will be stored in modules/playersave.py
 
 non python assets, such as the json file defining enemy stats based on difficulty will be stored in /assets. (eg. assets/difficulty.json)
+
+
