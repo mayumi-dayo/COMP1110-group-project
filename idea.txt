@@ -11,3 +11,4 @@ eg. the multiple functions related to loading and saving player save data will b
 non python assets, such as the json file defining enemy stats based on difficulty will be stored in /assets. (eg. assets/difficulty.json)
 
 
+the game will have an artifact system similar to genshin.

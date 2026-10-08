@@ -1,0 +1,23 @@
+##############################################################
+# how to run a script stored in a json file:
+JSON.json:
+{
+  "script_name": "Dynamic Greeter",
+  "python_code": "def greet(name):\n    print(f'Hello, {name}!')\n\ngreet('World')"
+}
+
+script.py:
+import json
+
+# 1. Open and load the JSON file
+with open("script.json", "r") as file:
+    data = json.load(file)
+
+# 2. Extract the code string
+code_to_run = data["python_code"]
+
+# 3. Execute the code dynamically
+exec(code_to_run)
+
+
+##################################################################
