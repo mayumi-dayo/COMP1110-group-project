@@ -12,20 +12,35 @@ def init_savefile():
             "atk": "",
             "def": "",
             "inventory": [
-                {
-                    "item":"weap01",
+                "weap1": {
                     "name":"Dull Sword",
-                    "quantity":1, 
-                    "weight":40, 
-                    "data":{"weap"}, 
-                    "description": "An iron blade which has since become worn of the past battles it has fought"
+                    "quantity":1,
+                    "weight":40,
+                    "weapon":{"is_weapon":True, "type":"melee","atk": 7, "consumable": False},
+                    "description": "An iron blade which has since become worn of the past battles it has fought",
+                    "script": {"has_script": False}
                     },
-                {
-                    "item":"pot01", 
+                "pot01": {
                     "name":"Small Health Potion",
                     "quantity": 1,
                     "weight": 5,
-                    "description": "A small health potion. Restores 20 health points."}
+                    "weapon": {"is_weapon": False},
+                    "description": "A small health potion. Restores 20 health points.",
+                    "script": {"has_script": True, "script":"""
+                        if if playerdata["player"]["inventory"]["pot01"]["quantity"] > 0:
+                            if playerdata["player"]["hp"]["hp"] < playerdata["player"]["hp"]["max"]:
+                                playerdata["player"]["hp"]["hp"] = playerdata["player"]["hp"]["hp"] + 20
+                                if playerdata["player"]["hp"]["hp"] > playerdata["player"]["hp"]["max"]:
+                                    playerdata["player"]["hp"]["hp"] = playerdata["player"]["hp"]["hp"]
+                                playerdata["player"]["inventory"]["pot01"]["quantity"] = playerdata["player"]["inventory"]["pot01"]["quantity"] - 1
+                                if playerdata["player"]["inventory"]["pot01"]["quantity"] <= 0:
+                                    del playerdata["player"]["inventory"]["pot01"]
+                            else:
+                                return"You are already at full health, you can't drink the potion."
+                        else:
+                            del playerdata["player"]["inventory"]["pot01"]
+                        """}
+                }
             ]
         },
         "scene": 0
